@@ -30,7 +30,7 @@ jobs:
         host: ${{ secrets.BIZNET_GIO_HOST }}
         username: ${{ secrets.BIZNET_GIO_USER }}
         key: ${{ secrets.BIZNET_GIO_SSH_KEY }}
-        port: 22
+        port: ${{ secrets.BIZNET_GIO_PORT }}
         script: |
             docker pull ${{ secrets.DOCKER_USERNAME }}/restaurant-app:latest
             docker stop restaurant-app || true
