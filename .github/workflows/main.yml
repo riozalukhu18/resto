@@ -29,9 +29,10 @@ jobs:
       with:
         host: ${{ secrets.BIZNET_GIO_HOST }}
         username: ${{ secrets.BIZNET_GIO_USER }}
-        password: ${{ secrets.BIZNET_GIO_PASSWORD }}
+        key: ${{ secrets.BIZNET_GIO_SSH_KEY }}
+        port: 22
         script: |
-          docker pull ${{ secrets.DOCKER_USERNAME }}/restaurant-app:latest
-          docker stop restaurant-app || true
-          docker rm restaurant-app || true
-          docker run -d --name restaurant-app -p 80:80 --restart always ${{ secrets.DOCKER_USERNAME }}/restaurant-app:latest
+            docker pull ${{ secrets.DOCKER_USERNAME }}/restaurant-app:latest
+            docker stop restaurant-app || true
+            docker rm restaurant-app || true
+            docker run -d --name restaurant-app -p 80:80 --restart always ${{ secrets.DOCKER_USERNAME }}/restaurant-app:latest
