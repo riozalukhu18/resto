@@ -1,0 +1,31 @@
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.6. Set the 'ServerName' directive globally to suppress this message
+[Wed Feb 26 08:41:25.453416 2025] [:emerg] [pid 1:tid 1] AH00020: Configuration Failed, exiting
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.6. Set the 'ServerName' directive globally to suppress this message
+[Wed Feb 26 08:41:26.818550 2025] [:emerg] [pid 1:tid 1] AH00020: Configuration Failed, exiting
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.6. Set the 'ServerName' directive globally to suppress this message
+[Wed Feb 26 08:41:28.110229 2025] [:emerg] [pid 1:tid 1] AH00020: Configuration Failed, exiting
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.6. Set the 'ServerName' directive globally to suppress this message
+[Wed Feb 26 08:41:29.341930 2025] [:emerg] [pid 1:tid 1] AH00020: Configuration Failed, exiting
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.6. Set the 'ServerName' directive globally to suppress this message
+[Wed Feb 26 08:41:31.298473 2025] [:emerg] [pid 1:tid 1] AH00020: Configuration Failed, exiting
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.6. Set the 'ServerName' directive globally to suppress this message
+[Wed Feb 26 08:41:33.743288 2025] [:emerg] [pid 1:tid 1] AH00020: Configuration Failed, exiting
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.6. Set the 'ServerName' directive globally to suppress this message
+[Wed Feb 26 08:41:38.112248 2025] [:emerg] [pid 1:tid 1] AH00020: Configuration Failed, exiting
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.6. Set the 'ServerName' directive globally to suppress this message
+[Wed Feb 26 08:41:45.383167 2025] [:emerg] [pid 1:tid 1] AH00020: Configuration Failed, exiting
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.6. Set the 'ServerName' directive globally to suppress this message
+[Wed Feb 26 08:41:58.940884 2025] [:emerg] [pid 1:tid 1] AH00020: Configuration Failed, exiting
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.6. Set the 'ServerName' directive globally to suppress this message
+[Wed Feb 26 08:42:25.459499 2025] [:emerg] [pid 1:tid 1] AH00020: Configuration Failed, exiting
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.6. Set the 'ServerName' directive globally to suppress this message
+[Wed Feb 26 08:43:17.714636 2025] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.62 (Debian) PHP/8.1.31 configured -- resuming normal operations
+[Wed Feb 26 08:43:17.714854 2025] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Wed Feb 26 08:43:25.545617 2025] [mpm_prefork:notice] [pid 1:tid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.6. Set the 'ServerName' directive globally to suppress this message
+[Wed Feb 26 08:44:25.189501 2025] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.62 (Debian) PHP/8.1.31 configured -- resuming normal operations
+[Wed Feb 26 08:44:25.197430 2025] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Wed Feb 26 08:52:43.209232 2025] [mpm_prefork:notice] [pid 1:tid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.6. Set the 'ServerName' directive globally to suppress this message
+[Wed Feb 26 08:58:18.022170 2025] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.62 (Debian) PHP/8.1.31 configured -- resuming normal operations
+[Wed Feb 26 08:58:18.022378 2025] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
