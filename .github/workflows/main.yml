@@ -36,15 +36,16 @@ jobs:
             
             changed_services=$(git diff --name-only HEAD~1 HEAD | grep 'docker-compose' | xargs -r docker-compose config --services)
 
+            monitoring_services=("grafana" "promtail" "loki")
+
             if [ -n "$changed_services" ]; then
               for service in $changed_services; do
-                echo "Updating service: $service"
-                docker-compose stop $service
-                docker-compose rm -f $service
-                docker-compose up -d $service
+                if [[ ! " ${monitoring_services[@]} " =~ " ${service} " ]]; then
+                  docker-compose stop $service
+                  docker-compose rm -f $service
+                  docker-compose up -d $service
+                fi
               done
-            else
-              echo "No changes detected in services."
             fi
             
             docker-compose ps
