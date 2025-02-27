@@ -3,7 +3,7 @@ name: Deploy to Biznet Gio VPS
 on:
   push:
     branches:
-      - main  # Ganti dengan branch yang ingin digunakan
+      - main  # bisa ganti branch
 
 jobs:
   deploy:
@@ -23,7 +23,6 @@ jobs:
     - name: Push Docker Image
       run: docker push ${{ secrets.DOCKER_USERNAME }}/restaurant-app:latest
 
-
     - name: Deploy to VPS via SSH
       uses: appleboy/ssh-action@v0.1.10
       with:
@@ -32,7 +31,12 @@ jobs:
         key: ${{ secrets.BIZNET_GIO_SSH_KEY }}
         port: ${{ secrets.BIZNET_GIO_PORT }}
         script: |
-            docker pull ${{ secrets.DOCKER_USERNAME }}/restaurant-app:latest
+            # Hentikan dan hapus container lama jika ada
             docker stop restaurant-app || true
             docker rm restaurant-app || true
+
+            docker pull ${{ secrets.DOCKER_USERNAME }}/restaurant-app:latest
+
             docker run -d --name restaurant-app -p 83:80 --restart always ${{ secrets.DOCKER_USERNAME }}/restaurant-app:latest
+
+            docker exec restaurant-app chmod -R 755 /usr/share/nginx/html
