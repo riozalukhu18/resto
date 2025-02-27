@@ -34,10 +34,17 @@ jobs:
             git reset --hard
             git pull origin main
             
-            docker-compose down --remove-orphans
-            docker system prune -af --volumes
+            changed_services=$(git diff --name-only HEAD~1 HEAD | grep 'docker-compose' | xargs -r docker-compose config --services)
 
-            docker pull ${{ secrets.DOCKER_USERNAME }}/restaurant-app:latest
+            if [ -n "$changed_services" ]; then
+              for service in $changed_services; do
+                echo "Updating service: $service"
+                docker-compose stop $service
+                docker-compose rm -f $service
+                docker-compose up -d $service
+              done
+            else
+              echo "No changes detected in services."
+            fi
             
-            docker-compose up -d --force-recreate
             docker-compose ps
