@@ -34,7 +34,7 @@ jobs:
             git reset --hard
             git pull origin main
             
-            # Cek perubahan pada docker-compose
+            # Cek perubahan pada file docker-compose
             changed_files=$(git diff --name-only HEAD~1 HEAD | grep 'docker-compose' || echo "")
 
             if [ -n "$changed_files" ]; then
@@ -44,12 +44,12 @@ jobs:
             fi
 
             monitoring_services=("grafana" "promtail" "loki")
-            restart_monitoring=false
+            monitoring_changes=false
 
             if [ -n "$changed_services" ]; then
               for service in $changed_services; do
                 if [[ " ${monitoring_services[@]} " =~ " ${service} " ]]; then
-                  restart_monitoring=true
+                  monitoring_changes=true
                 else
                   echo "Updating service: $service"
                   docker-compose stop $service
@@ -59,11 +59,9 @@ jobs:
               done
             fi
 
-            if [ "$restart_monitoring" = true ]; then
+            if [ "$monitoring_changes" = true ]; then
               echo "Restarting monitoring services (Grafana, Promtail, Loki)"
-              docker-compose stop grafana promtail loki
-              docker-compose rm -f grafana promtail loki
-              docker-compose up -d grafana promtail loki
+              docker-compose restart grafana promtail loki
             fi
 
             docker-compose ps
