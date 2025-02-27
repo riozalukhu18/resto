@@ -35,4 +35,4 @@ jobs:
             docker pull ${{ secrets.DOCKER_USERNAME }}/restaurant-app:latest
             docker stop restaurant-app || true
             docker rm restaurant-app || true
-            docker run -d --name restaurant-app -p 80:80 --restart always ${{ secrets.DOCKER_USERNAME }}/restaurant-app:latest
+            docker run -d --name restaurant-app -p 83:80 --restart always ${{ secrets.DOCKER_USERNAME }}/restaurant-app:latest
