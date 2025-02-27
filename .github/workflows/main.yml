@@ -3,7 +3,7 @@ name: Deploy to Biznet Gio VPS
 on:
   push:
     branches:
-      - main  # bisa ganti branch
+      - main
 
 jobs:
   deploy:
@@ -31,7 +31,6 @@ jobs:
         key: ${{ secrets.BIZNET_GIO_SSH_KEY }}
         port: ${{ secrets.BIZNET_GIO_PORT }}
         script: |
-            # Hentikan dan hapus container lama jika ada
             docker stop restaurant-app || true
             docker rm restaurant-app || true
 
@@ -39,4 +38,5 @@ jobs:
 
             docker run -d --name restaurant-app -p 83:80 --restart always ${{ secrets.DOCKER_USERNAME }}/restaurant-app:latest
 
-            docker exec restaurant-app chmod -R 755 /usr/share/nginx/html
+            # Periksa apakah root document benar sebelum chmod
+            docker exec restaurant-app ls -al / || true
