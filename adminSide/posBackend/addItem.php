@@ -14,7 +14,7 @@ if (isset($_GET['addToCart'])) {
     if ($result) {
         if (mysqli_num_rows($result) > 0) {
             // Record exists, update quantity
-            $update_quantity_sql = "UPDATE bill_items SET quantity = quantity + $quantity WHERE bill_id = '$bill_id' AND item_id = '$item_id'";
+            $update_quantity_sql = "UPDATE Bill_Items SET quantity = quantity + $quantity WHERE bill_id = '$bill_id' AND item_id = '$item_id'";
             if (mysqli_query($link, $update_quantity_sql)) {
                 // Update the Kitchen table too
                 $update_kitchen_sql = "UPDATE Kitchen SET quantity = quantity + $quantity, time_submitted = '$currentTime' WHERE table_id = '$table_id' AND item_id = '$item_id'";
