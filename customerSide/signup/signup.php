@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	$cpassword = $_POST["cpassword"];
 			
 	
-	$sql = "Select * from users where username='$username'";
+	$sql = "Select * from Users where username='$username'";
 	
 	$result = mysqli_query($conn, $sql);
 	

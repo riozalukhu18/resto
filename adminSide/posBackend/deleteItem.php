@@ -8,7 +8,7 @@ if (isset($_GET['bill_item_id'])) {
 
 
     // Delete the item with the given bill_item_id
-    $delete_query = "DELETE FROM bill_items WHERE bill_item_id = '$bill_item_id'";
+    $delete_query = "DELETE FROM Bill_Items WHERE bill_item_id = '$bill_item_id'";
     
     if (mysqli_query($link, $delete_query)) {
         // Redirect back to the orderItem.php page with a success message

@@ -8,7 +8,7 @@ if (isset($_GET['addToCart'])) {
     $table_id = $_GET['table_id'];
     $currentTime = date('Y-m-d H:i:s'); // Current time
 
-    $select_sql = "SELECT * FROM bill_items WHERE bill_id = '$bill_id' AND item_id = '$item_id'";
+    $select_sql = "SELECT * FROM Bill_Items WHERE bill_id = '$bill_id' AND item_id = '$item_id'";
     $result = mysqli_query($link, $select_sql);
 
     if ($result) {
@@ -27,7 +27,7 @@ if (isset($_GET['addToCart'])) {
             }
         } else {
             // Record doesn't exist, insert new record
-            $insert_item_sql = "INSERT INTO bill_items (bill_id, item_id, quantity) VALUES ('$bill_id', '$item_id', '$quantity')";
+            $insert_item_sql = "INSERT INTO Bill_Items (bill_id, item_id, quantity) VALUES ('$bill_id', '$item_id', '$quantity')";
             $insert_kitchen_sql = "INSERT INTO Kitchen (table_id, item_id, quantity, time_submitted) VALUES ('$table_id', '$item_id', '$quantity', '$currentTime')";
 
             if (mysqli_query($link, $insert_item_sql) && mysqli_query($link, $insert_kitchen_sql)) {

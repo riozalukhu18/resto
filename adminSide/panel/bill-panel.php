@@ -1,4 +1,4 @@
-<?php
+w<?php
 session_start(); // Ensure session is started
 require_once '../posBackend/checkIfLoggedIn.php';
 ?>

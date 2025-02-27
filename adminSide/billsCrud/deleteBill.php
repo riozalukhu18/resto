@@ -12,7 +12,7 @@ if (isset($_GET['id'])) {
     mysqli_query($link, $disableForeignKeySQL);
 
     // Construct the DELETE query with a parameterized query
-    $deleteSQL = "DELETE FROM bills WHERE bill_id = ?";
+    $deleteSQL = "DELETE FROM Bills WHERE bill_id = ?";
 
     // Prepare the DELETE query
     if ($stmt = mysqli_prepare($link, $deleteSQL)) {
