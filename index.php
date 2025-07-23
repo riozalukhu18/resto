@@ -4,10 +4,10 @@ ob_start();
 
 // Cek apakah setup sudah selesai
 if (file_exists('/tmp/setup_completed.flag')) {
-    header("Location: http://103.150.101.52:86/customerSide/home/home.php");
+    header("Location: http://" . $_SERVER['HTTP_HOST'] . "/customerSide/home/home.php");
     exit();
 } else {
-    define('DB_HOST', 'php-mysql');
+    define('DB_HOST', 'php-mysql-resto');
     define('DB_USER', 'user');
     define('DB_PASS', 'password');
 
@@ -45,7 +45,7 @@ if (file_exists('/tmp/setup_completed.flag')) {
     $link->close();
 
     // Redirect ke halaman utama setelah setup selesai
-    header("Location: http://103.150.101.52:86/customerSide/home/home.php");
+    header("Location: http://" . $_SERVER['HTTP_HOST'] . "/customerSide/home/home.php");
     exit();
 }
 

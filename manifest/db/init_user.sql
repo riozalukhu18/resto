@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS restaurantdb;
+
+CREATE USER IF NOT EXISTS 'user'@'%' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON restaurantdb.* TO 'user'@'%';
+FLUSH PRIVILEGES;
