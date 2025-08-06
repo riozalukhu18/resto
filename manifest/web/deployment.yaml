@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: php-web-resto
-          image: resto-web:v5
+          image: resto-web:v7
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
